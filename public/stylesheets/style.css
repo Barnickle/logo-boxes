@@ -1,0 +1,81 @@
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#20adb2+0,0d4a4c+100 */
+    background: rgb(32, 173, 178);
+    /* Old browsers */
+    background: -moz-linear-gradient(-45deg, rgba(32, 173, 178, 1) 0%, rgba(13, 74, 76, 1) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, rgba(32, 173, 178, 1) 0%, rgba(13, 74, 76, 1) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, rgba(32, 173, 178, 1) 0%, rgba(13, 74, 76, 1) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#20adb2', endColorstr='#0d4a4c', GradientType=1);
+    /* IE6-9 fallback on horizontal gradient */
+}
+
+h1 {
+    color: white;
+}
+
+.entries {
+    display: grid;
+    grid-gap: 40px;
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-flow: row;
+}
+
+@media(max-width: 1300px) {
+    .entries {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media(max-width: 1100px) {
+    .entries {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media(max-width: 850px) {
+    .entries {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.entries>a {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 10px -4px black;
+    padding: 10px;
+    background: white;
+    justify-content: space-between;
+    text-decoration: none;
+    color: black;
+    transition: transform 0.3s;
+    height: 130px;
+}
+
+.entries>a:hover {
+    transform: scale(1.2);
+}
+
+.entries>a>img {
+    flex: 1 1 auto;
+    max-width: 100%;
+    box-sizing: border-box;
+    height: calc(100% - 26px);
+    object-fit: contain;
+}
+
+.entries>a>h2 {
+    margin: 10px 0 0;
+    line-height: 16px;
+}

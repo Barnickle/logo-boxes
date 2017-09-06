@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1= title
+  section.entries
+    each entry in entries
+      a(
+        href=entry.action
+        target="_blank"
+      )
+        img(
+          src="/images/logos/"+entry.logo
+          style=entry.style
+        )
+        h2=entry.title
