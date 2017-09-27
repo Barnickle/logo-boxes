@@ -6,6 +6,12 @@ const data = {
 			title: 'ABB',
 			logo: 'abb.png',
 			action: 'http://new.abb.com/ch',
+			datahuepost: {
+				on: true,
+				sat: 254,
+				bri: 254,
+				hue: 10000
+			}
 		},
 		{
 			title: 'Bosch',
