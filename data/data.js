@@ -16,6 +16,10 @@ const data = {
 				sat: 254,
 				bri: 254,
 				hue: 10000
+			},
+			style: {
+				'object-fit': 'cover',
+				'object-position': 'top'
 			}
 		},
 		{

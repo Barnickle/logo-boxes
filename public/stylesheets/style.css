@@ -7,7 +7,8 @@ body {
     box-sizing: border-box;
     margin: 0;
     padding: 50px;
-    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-family: "Helvetica Neue", Helvetica, 'Arimo', Arial, sans-serif;
     background-image: url(/images/bg1.png);
     background-size: contain;
     background-position-y: 85%;
@@ -15,7 +16,8 @@ body {
 }
 
 h1 {
-    color: black;
+    font-weight: normal;
+    font-size: 2.5em;
 }
 
 .entries {
