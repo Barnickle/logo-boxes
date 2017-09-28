@@ -1,4 +1,4 @@
-const hueIP = '<bridge ip address>/api/',
+const hueIP = '<bridge ip address>',
   username = '1028d66426293e821ecfd9ef1a0731df';
 
 const links = document.getElementsByTagName('a');
