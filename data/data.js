@@ -3,6 +3,11 @@ const data = {
 	title: 'DigitalLab @ HSR',
 	entries: [
 		{
+			title: 'Digitallab',
+			logo: 'digitallab.png',
+			action: 'https://ontrack.hilti.com/ontrack/app.html'
+		},
+		{
 			title: 'Hilti',
 			logo: 'hilti.png',
 			action: 'https://ontrack.hilti.com/ontrack/app.html'
@@ -10,7 +15,11 @@ const data = {
 		{
 			title: 'Bossard',
 			logo: 'bossard.png',
-			action: 'https://www.bossard.com/de/smart-factory-logistics.aspx',
+			action: '/bossard/de/smart-factory-logistics.aspx',
+			proxy: {
+				path: '/bossard',
+				website: 'www.bossard.com'
+			},
 			datahuepost: { //example
 				on: true,
 				sat: 254,

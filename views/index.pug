@@ -8,13 +8,15 @@ block content
     )
   section.entries
     each entry in entries
-      a(
-        href=entry.action
-        target="_blank"
+      article(
         data-huepost=entry.datahuepost
       )
-        img(
-          src="/images/logos/"+entry.logo
-          style=entry.style
+        a(
+          target="_blank"
+          href=entry.action
         )
-        h2=entry.title
+          img(
+            src="/images/logos/"+entry.logo
+            style=entry.style
+          )
+          h2=entry.title
