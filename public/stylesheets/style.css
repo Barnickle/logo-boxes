@@ -9,9 +9,10 @@ body {
     padding: 50px;
     font-size: 14px;
     font-family: "Helvetica Neue", Helvetica, 'Arimo', Arial, sans-serif;
-    background-image: url(/images/bg1.png);
-    background-size: contain;
-    background-position-y: 85%;
+    background-image: url(/images/bg1.png), url(/images/logos.png);
+    background-size: contain, auto;
+    background-position-y: 85%, 100%;
+    background-position-x: 100%;
     background-repeat: no-repeat;
 }
 
