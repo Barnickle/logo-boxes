@@ -5,7 +5,7 @@ const data = {
 		{
 			title: 'Digitallab',
 			logo: 'digitallab.png',
-			action: 'https://ontrack.hilti.com/ontrack/app.html'
+			action: 'http://digitallabathsr.ch/'
 		},
 		{
 			title: 'Hilti',
@@ -46,16 +46,8 @@ const data = {
 			logo: 'weidman.png',
 			action: 'https://www.weidmann-medical.com/technologie/'
 		},
-		{
-			title: 'Tracktics',
-			logo: 'tracktics.png',
-			action: '/apps/bosch',
-			style: {
-				'background-color': 'rgba(0, 0, 0, 1)',
-				padding: '10px',
-			}
-		},
 	],
+	// app example: action: '/apps/bosch'
 	apps: {
 		bosch: 'start C:\\WINDOWS\\system32\\cmd.exe'
 	}

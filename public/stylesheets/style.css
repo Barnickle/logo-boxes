@@ -6,7 +6,7 @@ body {
 body {
     box-sizing: border-box;
     margin: 0;
-    padding: 50px;
+    padding: 5vw;
     font-size: 14px;
     font-family: "Helvetica Neue", Helvetica, 'Arimo', Arial, sans-serif;
     background-image: url(/images/bg1.png), url(/images/logos.png);
@@ -80,4 +80,51 @@ h1 {
 .entries>article>a>h2 {
     margin: 10px 0 0;
     line-height: 16px;
+}
+
+.window {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 5vw;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.window>.box {
+    width: 100%;
+    height: 100%;
+    background: white;
+    box-sizing: border-box;
+    padding: 3vw;
+    display: grid;
+    grid-template: "title close" 48px "iframe iframe" 1fr / 1fr 48px;
+    grid-gap: 3vw;
+}
+
+.window>.box>h1 {
+    grid-area: title;
+    margin: 0;
+    line-height: 48px;
+}
+
+.window>.box>img {
+    grid-area: close;
+}
+
+.window>.box>iframe {
+    grid-area: iframe;
+    border: none;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity .5s
+}
+
+.fade-enter,
+.fade-leave-to {
+    opacity: 0
 }
