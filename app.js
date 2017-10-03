@@ -4,9 +4,11 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+const expressProxy = require('express-http-proxy');
 
 var index = require('./routes/index');
 var apps = require('./routes/apps');
+var data = require('./data/data');
 
 var app = express();
 
@@ -24,6 +26,27 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/apps', apps);
+
+
+data.entries.forEach(function (entry) {
+  const proxy = entry.proxy
+  if (proxy) {
+    app.use(proxy.path, expressProxy(proxy.website, {
+      https: true,
+      preserveHostHdr: true,
+      proxyReqOptDecorator: function (proxyReqOpts, srcReq) {
+        console.log("asfd", { proxyReqOpts, srcReq });
+        // you can update headers
+        // proxyReqOpts.headers['Content-Type'] = 'text/html';
+        // you can change the method
+        // proxyReqOpts.method = 'GET';
+        return proxyReqOpts;
+      },
+
+      // http://localhost:3000/bossard
+    }));
+  }
+});
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

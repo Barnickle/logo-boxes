@@ -8,13 +8,29 @@ block content
     )
   section.entries
     each entry in entries
-      a(
-        href=entry.action
-        target="_blank"
+      article(
         data-huepost=entry.datahuepost
       )
-        img(
-          src="/images/logos/"+entry.logo
-          style=entry.style
+        a(
+          target="_blank"
+          href=entry.action
+          data-title=entry.title
         )
-        h2=entry.title
+          img(
+            src="/images/logos/"+entry.logo
+            style=entry.style
+          )
+  section#windowApp
+    transition(name='fade')
+      .window(v-if='show')
+        .box
+          h1 {{title}}
+          img(
+            src='/images/close.svg'
+            alt='close'
+            @click='close'
+          )
+          iframe(
+            v-if='show'
+            :src='src'
+          )

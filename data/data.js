@@ -3,6 +3,11 @@ const data = {
 	title: 'DigitalLab @ HSR',
 	entries: [
 		{
+			title: 'Digitallab',
+			logo: 'digitallab.png',
+			action: 'http://digitallabathsr.ch/'
+		},
+		{
 			title: 'Hilti',
 			logo: 'hilti.png',
 			action: 'https://ontrack.hilti.com/ontrack/app.html'
@@ -10,7 +15,11 @@ const data = {
 		{
 			title: 'Bossard',
 			logo: 'bossard.png',
-			action: 'https://www.bossard.com/de/smart-factory-logistics.aspx',
+			action: '/bossard/de/smart-factory-logistics.aspx',
+			proxy: {
+				path: '/bossard',
+				website: 'www.bossard.com'
+			},
 			datahuepost: { //example
 				on: true,
 				sat: 254,
@@ -37,16 +46,8 @@ const data = {
 			logo: 'weidman.png',
 			action: 'https://www.weidmann-medical.com/technologie/'
 		},
-		{
-			title: 'Tracktics',
-			logo: 'tracktics.png',
-			action: '/apps/bosch',
-			style: {
-				'background-color': 'rgba(0, 0, 0, 1)',
-				padding: '10px',
-			}
-		},
 	],
+	// app example: action: '/apps/bosch'
 	apps: {
 		bosch: 'start C:\\WINDOWS\\system32\\cmd.exe'
 	}
