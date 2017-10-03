@@ -18,7 +18,7 @@ const data = {
 			action: '/bossard/de/smart-factory-logistics.aspx',
 			proxy: {
 				path: '/bossard',
-				website: 'www.bossard.com'
+				website: 'https://www.bossard.com'
 			},
 			datahuepost: { //example
 				on: true,

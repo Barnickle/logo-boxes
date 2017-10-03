@@ -1,16 +1,16 @@
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
+const express = require('express');
+const path = require('path');
+const favicon = require('serve-favicon');
+const logger = require('morgan');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
 const expressProxy = require('express-http-proxy');
 
-var index = require('./routes/index');
-var apps = require('./routes/apps');
-var data = require('./data/data');
+const index = require('./routes/index');
+const apps = require('./routes/apps');
+const data = require('./data/data');
 
-var app = express();
+const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -24,29 +24,20 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', index);
-app.use('/apps', apps);
-
-
+// Add proxys
 data.entries.forEach(function (entry) {
   const proxy = entry.proxy
   if (proxy) {
     app.use(proxy.path, expressProxy(proxy.website, {
-      https: true,
-      preserveHostHdr: true,
-      proxyReqOptDecorator: function (proxyReqOpts, srcReq) {
-        console.log("asfd", { proxyReqOpts, srcReq });
-        // you can update headers
-        // proxyReqOpts.headers['Content-Type'] = 'text/html';
-        // you can change the method
-        // proxyReqOpts.method = 'GET';
-        return proxyReqOpts;
-      },
-
-      // http://localhost:3000/bossard
+      userResDecorator: function (proxyRes, proxyResData, userReq, userRes) {
+        return proxyResData.toString('utf8').replace('<head>', `<head><base href="${proxy.website}" />`);
+      }
     }));
   }
 });
+
+app.use('/', index);
+app.use('/apps', apps);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
