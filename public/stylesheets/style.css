@@ -82,51 +82,44 @@ h1 {
     line-height: 16px;
 }
 
-.window {
+.box {
     position: fixed;
-    background: rgba(0, 0, 0, 0.8);
-    padding: 5vw;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 1vw;
+    left: 1vw;
+    right: 1vw;
+    bottom: 1vw;
     box-sizing: border-box;
-}
-
-.window>.box {
-    width: 100%;
-    height: 100%;
     background: white;
-    box-sizing: border-box;
-    padding: 3vw;
     display: grid;
-    grid-template: "title close" 48px "iframe iframe" 1fr / 1fr 48px;
-    grid-gap: 3vw;
+    grid-template: ". . . ." 1vw ". title close ." 48px "iframe iframe iframe iframe" 1fr / 1vw 1fr 48px 1vw;
+    grid-gap: 1vw;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-.window>.box>h1 {
+.box>h1 {
     grid-area: title;
     margin: 0;
     line-height: 48px;
 }
 
-.window>.box>img {
+.box>img {
     grid-area: close;
 }
 
-.window>.box>iframe {
+.box>iframe {
     grid-area: iframe;
     border: none;
-    height: 100%;
-    width: 100%;
+    justify-self: stretch;
+    align-self: stretch;
 }
 
 .fade-enter-active,
 .fade-leave-active {
-    transition: opacity .5s
+    transition: opacity .5s, transform .5s;
 }
 
 .fade-enter,
 .fade-leave-to {
-    opacity: 0
+    opacity: 0;
+    transform: scale(0.5);
 }

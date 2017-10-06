@@ -14,6 +14,17 @@ const data = {
 		},
 		{
 			title: 'Bossard',
+			logo: '/old/bossard.svg',
+			action: '/apps/bossard',
+			datahuepost: { //example
+				on: true,
+				sat: 254,
+				bri: 254,
+				hue: 10000
+			},
+		},
+		{
+			title: 'Bossard',
 			logo: 'bossard.png',
 			action: '/bossard/de/smart-factory-logistics.aspx',
 			proxy: {
@@ -47,9 +58,8 @@ const data = {
 			action: 'https://www.weidmann-medical.com/technologie/'
 		},
 	],
-	// app example: action: '/apps/bosch'
 	apps: {
-		bosch: 'start C:\\WINDOWS\\system32\\cmd.exe'
+		bossard: 'start C:\\Temp\\application.windows64\\digisens_demoapp_try40.exe'
 	}
 }
 
