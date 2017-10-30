@@ -4,7 +4,9 @@ block content
   section.entries
     each entry in entries
       article(
-        data-huepost=entry.datahuepost
+        data-hueusername=entry.datahue?entry.datahue.username:null
+        data-hueip=entry.datahue?entry.datahue.ip:null
+        data-huepost=entry.datahue?entry.datahue.post:null
       )
         a(
           target="_blank"

@@ -16,11 +16,15 @@ const data = {
 			title: 'Bossard',
 			logo: '/old/bossard.svg',
 			action: '/apps/bossard',
-			datahuepost: { //example
-				on: true,
-				sat: 254,
-				bri: 254,
-				hue: 10000
+			datahue: {
+				username: '1028d66426293e821ecfd9ef1a0731df',
+				ip: '192.234.52.24',
+				post: {
+					on: true,
+					sat: 254,
+					bri: 254,
+					hue: 10000
+				},
 			},
 		},
 		{
@@ -31,11 +35,15 @@ const data = {
 				path: '/bossard',
 				website: 'https://www.bossard.com'
 			},
-			datahuepost: { //example
-				on: true,
-				sat: 254,
-				bri: 254,
-				hue: 10000
+			datahue: {
+				username: '54190cd808b703655886dffc0ea3f5e2',
+				ip: '192.234.52.22',
+				post: { //example
+					on: true,
+					sat: 254,
+					bri: 254,
+					hue: 5000
+				},
 			},
 			style: {
 				'object-fit': 'cover',

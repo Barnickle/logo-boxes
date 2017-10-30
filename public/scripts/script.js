@@ -1,5 +1,4 @@
-const hueIP = '<bridge ip address>',
-  username = '1028d66426293e821ecfd9ef1a0731df';
+
 
 const app = new Vue({
   el: '#windowApp',
@@ -32,8 +31,9 @@ for (let i = 0; i < links.length; i++) {
     } else {
       app.displayWindow(link.dataset.title, link.href);
     }
-    if (link.dataset.huepost) {
-      fetch(`http://${hueIP}/api/${username}/lights/1/state`, {
+    if (link.parentElement.dataset.hueip) {
+      const ds = link.parentElement.dataset;
+      fetch(`http://${ds.hueip}/api/${ds.hueusername}/lights/1/state`, {
         method: 'post',
         body: link.dataset.huepost
       });
