@@ -35,15 +35,26 @@ for (let i = 0; i < links.length; i++) {
       }
       const ds = link.parentElement.dataset;
       if (ds.hueusername) {
-        fetch(
-          `http://${hueip}/api/${ds.hueusername}/lights/${ds.huelight}/state`,
-          {
-            method: 'post',
-            body: ds.huepost
-          }
-        );
+        lightUp(ds.huelight, ds.huepost);
       }
     },
     false
   );
+}
+
+const lights = JSON.parse(
+  document.getElementsByClassName('entries')[0].dataset.huelights
+);
+
+function lightUp(light, command) {
+  // turn off all lights except light
+  lights.forEach(l => l != light && lightSet(l));
+  lightSet(light, command);
+}
+
+function lightSet(light, command = JSON.stringify({ on: false })) {
+  fetch(`http://${hueip}/api/${username}/lights/${light}/state`, {
+    method: 'post',
+    body: command
+  });
 }

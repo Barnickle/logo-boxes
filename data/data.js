@@ -98,10 +98,8 @@ const data = {
   ],
   apps: {
     bossard: 'start C:\\Temp\\application.windows64\\digisens_demoapp_try40.exe'
-  },
-  lights: (function() {
-    data.entries.filter(e => e.datahue).map(e => e.datahue.light);
-  })()
+  }
 };
+data.lights = data.entries.filter(e => e.datahue).map(e => e.datahue.light);
 
 module.exports = data;

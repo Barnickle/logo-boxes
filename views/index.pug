@@ -1,7 +1,7 @@
 extends layout
 
 block content
-  section.entries
+  section.entries(data-huelights=lights)
     each entry in entries
       article(
         data-hueusername=entry.datahue?entry.datahue.username:null
